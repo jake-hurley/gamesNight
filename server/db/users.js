@@ -1,7 +1,7 @@
-const connection = require('./connection')
+const connection = require('../connection')
 
 function getUsers (db = connection) {
-  return db('users')
+  return db('users').select()
 }
 
 function getUserById (id, db = connection) {
