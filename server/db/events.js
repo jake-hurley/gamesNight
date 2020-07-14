@@ -1,7 +1,8 @@
-const connection = require('./connection')
+const connection = require('../connection')
 
 function getEvents (db = connection) {
-  return db('events').select()
+  return db('events')
+    .select()
 }
 
 function getEventById (eventId, db = connection) {
