@@ -7,7 +7,8 @@ function getEvents (db = connection) {
 
 function getEventById (eventId, db = connection) {
   return db('events')
-    .where('event_id', eventId).select()
+    .where('id', eventId)
+    .select()
 }
 
 module.exports = {

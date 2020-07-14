@@ -12,5 +12,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:eventId', (req, res) => {
+  const { eventId } = req.params
+  db.getEventById(eventId)
+    .then(response => {
+      res.json(response)
+    })
+})
 
 module.exports = router
