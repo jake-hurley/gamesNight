@@ -19,4 +19,14 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  const newUser = {
+    name: req.body.name
+  }
+  db.addUser(newUser)
+    .then(response => {
+      res.json('added!')
+    })
+})
+
 module.exports = router

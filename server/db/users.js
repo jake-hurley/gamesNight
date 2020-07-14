@@ -9,7 +9,17 @@ function getUserById (id, db = connection) {
     .where('id', id)
 }
 
+// INCOMPLETE!!
+function addUser (userObject, db = connection) {
+  return db('users')
+    .insert({ name: userObject.name })
+    .then(response => {
+      return response
+    })
+}
+
 module.exports = {
   getUsers,
-  getUserById
+  getUserById,
+  addUser
 }
