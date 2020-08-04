@@ -6,7 +6,7 @@ function getUsers (db = connection) {
 
 function getUserById (id, db = connection) {
   return db('users')
-    .where('id', id)
+    .where('id', id).first()
 }
 
 module.exports = {

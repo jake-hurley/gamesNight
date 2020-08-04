@@ -19,7 +19,7 @@ router.get('/users/:userId', (req, res) => {
     const userId = req.params.userId
     db.getUserById(userId)
     .then(response => {
-        if(response.length > 0)
+        if(response)
         res.status(200).json(response)
         else res.status(500).json('User does not exist!')
     })
