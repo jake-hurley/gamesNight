@@ -11,7 +11,7 @@ export class Home extends Component {
   }
 
   checkData = () => {
-    const data = db.collection("users").doc('0')
+    const data = db.collection("users").doc('2')
     data.get().then(function(doc) {
     if (doc.exists) {
         console.log("Document data:", doc.data());
