@@ -8,9 +8,7 @@ router.get('/event', (req, res) => {
 
   db.getEvents()
     .then(response => {
-      console.log(response)
-      res.json(response)
-        // res.status(200).json(item)
+      res.status(200).json(response)
       })
     .catch(err => {
       console.error(err.message)
@@ -20,11 +18,15 @@ router.get('/event', (req, res) => {
 
 router.get('/event/:eventId', (req, res) => {
   const eventId = req.params.eventId
-  console.log(eventId)
-
   db.getEventById(eventId)
   .then(response => {
+    if(response.length > 0)
     res.status(200).json(response)
+    else res.status(500).json('Event does not exist!')
+  })
+  .catch(err => {
+    console.error(err.message)
+    res.status(500).json("An unexpected error has occurred and we're looking into it")
   })
 })
 
