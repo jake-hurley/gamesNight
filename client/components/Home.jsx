@@ -1,28 +1,14 @@
 import React, { Component } from 'react'
 
-import firebase from '../../fireStore/fireStore.js'
-
-const db = firebase.firestore()
+import { getAttendees } from '../api/api'
 
 export class Home extends Component {
 
   componentDidMount () {
-   this.checkData()
+  getAttendees(1)
+  .then(response => console.log(response))
   }
 
-  checkData = () => {
-    const data = db.collection("users").doc('2')
-    data.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-    }).catch(function(error) {
-      console.log("Error getting document:", error);
-  })
-  }
   render () {
     return (
       <div>
