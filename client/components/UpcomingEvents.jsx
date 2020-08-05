@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { getUserEvents } from '../api/api'
 
@@ -9,7 +10,6 @@ export class UpcomingEvents extends Component {
     componentDidMount() {
         getUserEvents(1)
         .then(response => {
-            console.log(response)
             this.setState({
                 events: response
             })
@@ -28,6 +28,7 @@ export class UpcomingEvents extends Component {
                     </div>
                     )
               })}
+          <Link to={`/user/newEvent`}><button>Create Event</button></Link>
       </div>
     )
   }

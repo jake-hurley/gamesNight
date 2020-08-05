@@ -8,7 +8,6 @@ router.get('/userEvents/:userId', (req, res) => {
     const userId = req.params.userId
     db.getUserEvents(userId)
     .then(response => {
-        console.log(response)
         res.status(200).json(response)
     })
 })

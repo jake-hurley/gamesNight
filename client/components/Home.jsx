@@ -1,19 +1,27 @@
 import React, { Component } from 'react'
 
-import { getAttendees } from '../api/api'
+import { getUserEvents } from '../api/api'
 import UpcomingEvents from './UpcomingEvents'
 
 export class Home extends Component {
 
+  state = {
+    name: ''
+  }
+
   componentDidMount () {
-  // getAttendees(1)
-  // .then(response => console.log(response))
+  getUserEvents(1)
+  .then(response => { 
+    this.setState({
+      name: response[0].name
+    })
+  })
   }
 
   render () {
     return (
     <>
-      <h1>Gday</h1>
+      <h1>Gday {this.state.name}</h1>
       <UpcomingEvents />
     
     </>
