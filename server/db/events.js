@@ -9,7 +9,17 @@ function getEventById (eventId, db = connection) {
     .where('id', eventId).select()
 }
 
+function addEvent (eventObject, db = connection) {
+  // return db('events')
+  // .insert({ 
+  //     event_name: eventObject.event_name,
+  //     date: eventObject.date,  
+  //   })
+  console.log('pass')
+  }
+
 module.exports = {
   getEvents,
-  getEventById
+  getEventById,
+  addEvent
 }
