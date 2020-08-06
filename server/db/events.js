@@ -10,12 +10,12 @@ function getEventById (eventId, db = connection) {
 }
 
 function addEvent (eventObject, db = connection) {
-  // return db('events')
-  // .insert({ 
-  //     event_name: eventObject.event_name,
-  //     date: eventObject.date,  
-  //   })
-  console.log('pass')
+  console.log(eventObject)
+  return db('events')
+  .insert({ 
+      event_name: eventObject.event_name,
+      date: eventObject.date,  
+    })
   }
 
 module.exports = {

@@ -30,6 +30,25 @@ router.get('/event/:eventId', (req, res) => {
   })
 })
 
+router.post('/newEvent', (req, res) => {
+  // const newEvent = {
+  //   event_name: 'killer Catan',
+  //   date: '25-01-2020'
+  // }
+  console.log(req)
+  const newEvent = req.body
+  
+  console.log(newEvent)
+  db.addEvent(newEvent)
+  .then(event => {
+    res.status(200).json(event)
+  })
+  .catch(err => {
+    console.error(err.message)
+    res.status(500).json("An unexpected error has occurred and we're looking into it")
+  })
+})
+
 
 
 module.exports = router

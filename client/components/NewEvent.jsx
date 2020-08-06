@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { addEvent } from '../../server/db/events'
+import { addEvent } from '../api/api'
 
 export class NewEvent extends Component {
 
@@ -10,13 +10,11 @@ export class NewEvent extends Component {
     date: ''
   }
 
-  changeHandler (ev) {
+  changeHandler = (ev) => {
     const { name, value } = ev.target
     this.setState({
       [name]: value
     })
-    console.log(this.state)
-
   }
 
   clickHandler () {
@@ -28,9 +26,10 @@ export class NewEvent extends Component {
     return (
       <div>
         <h1>New Event</h1>
-        <input name='even_name' placeholder='Event Name' onChange={() => this.changeHandler()}></input>
-        <input name='date' type='date' placeholder='Date' onChange={() => this.changeHandler()}></input>
-        <select name='game' onChange={() => this.changeHandler()}>
+        <input name='event_name' placeholder='Event Name' onChange={this.changeHandler}></input>
+        <input name='date' type='date' placeholder='Date' onChange={this.changeHandler}></input>
+        <select name='game' onChange={this.changeHandler}>
+          <option>What Game are you playing?</option>
           <option value='Mario Kart'>Mario Kart</option>
           <option value='Catan'>Catan</option>
           <option value='Mysterium'>Mysterium</option>
