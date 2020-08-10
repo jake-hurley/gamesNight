@@ -31,11 +31,11 @@ router.get('/event/:eventId', (req, res) => {
 })
 
 router.post('/newEvent', (req, res) => {
-  const newEvent = {
-    event_name: 'killer Catan',
-    date: '25-01-2020'
-  }
-  // const newEvent = req.body
+  // const newEvent = {
+  //   event_name: 'killer Catan',
+  //   date: '25-01-2020'
+  // }
+  const newEvent = req.body
   db.addEvent(newEvent)
   .then(event => {
     res.status(200).json(event)

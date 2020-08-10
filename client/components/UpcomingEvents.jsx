@@ -22,11 +22,11 @@ export class UpcomingEvents extends Component {
           <h1>Upcoming Events</h1>
               {this.state.events.map(event => {
                   return ( 
-                    <div>
+                    <div key={event.eventId}>
                         <Link to={`/user/event/${event.eventId}`}>
-                            <h3>{event.event_name}</h3>
+                            <h3 key={event.eventId}>{event.event_name}</h3>
                         </Link>
-                        <h5>{event.date}</h5>
+                        <h5 key={event.eventId}>{event.date}</h5>
                     </div>
                     )
               })}

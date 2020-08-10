@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { withRouter } from "react-router"
 import { getEventById, getAttendees } from '../api/api'
 
+import Invite from './Invite'
+
 export class Event extends Component {
 
   state = {
@@ -11,7 +13,7 @@ export class Event extends Component {
     attendees: []
   }
 
-  // eventId = this.match
+
   componentDidMount () {
     const eventId = this.props.match.params.eventId
     console.log(eventId)
@@ -34,6 +36,10 @@ export class Event extends Component {
         })
       })
   }
+
+  clickHandler = () => {
+    console.log('pass')
+  }
   
   render () {
     return (
@@ -44,10 +50,12 @@ export class Event extends Component {
         <ul>
           {this.state.attendees.map(user => {
             return(
-              <li>{user.name}</li>
+              <li key={user.id}>{user.name}</li>
             )
           })}
         </ul>
+        <button onClick={() => this.clickHandler()}>Invite Someone</button>
+        <Invite />
       </div>
     )
   }

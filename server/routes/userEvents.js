@@ -21,5 +21,4 @@ router.get('/userEvents/attendees/:eventId', (req, res) => {
 
 })
 
-
 module.exports = router

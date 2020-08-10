@@ -33,6 +33,8 @@ export class NewEvent extends Component {
           <option value='Catan'>Catan</option>
           <option value='Mysterium'>Mysterium</option>
           <option value='Warzone'>Warzone</option>
+          <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
+
         </select>
         <button onClick={() => this.clickHandler()}>Create Event!</button>
 
