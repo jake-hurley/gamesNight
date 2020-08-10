@@ -20,7 +20,7 @@ router.get('/event/:eventId', (req, res) => {
   const eventId = req.params.eventId
   db.getEventById(eventId)
   .then(response => {
-    if(response.length > 0)
+    if(typeof response === 'object')
     res.status(200).json(response)
     else res.status(500).json('Event does not exist!')
   })
@@ -31,14 +31,11 @@ router.get('/event/:eventId', (req, res) => {
 })
 
 router.post('/newEvent', (req, res) => {
-  // const newEvent = {
-  //   event_name: 'killer Catan',
-  //   date: '25-01-2020'
-  // }
-  console.log(req)
-  const newEvent = req.body
-  
-  console.log(newEvent)
+  const newEvent = {
+    event_name: 'killer Catan',
+    date: '25-01-2020'
+  }
+  // const newEvent = req.body
   db.addEvent(newEvent)
   .then(event => {
     res.status(200).json(event)

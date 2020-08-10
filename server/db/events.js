@@ -6,7 +6,7 @@ function getEvents (db = connection) {
 
 function getEventById (eventId, db = connection) {
   return db('events')
-    .where('id', eventId).select()
+    .where('eventId', eventId).first()
 }
 
 function addEvent (eventObject, db = connection) {

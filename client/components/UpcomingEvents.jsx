@@ -23,7 +23,9 @@ export class UpcomingEvents extends Component {
               {this.state.events.map(event => {
                   return ( 
                     <div>
-                        <h3>{event.event_name}</h3>
+                        <Link to={`/user/event/${event.eventId}`}>
+                            <h3>{event.event_name}</h3>
+                        </Link>
                         <h5>{event.date}</h5>
                     </div>
                     )

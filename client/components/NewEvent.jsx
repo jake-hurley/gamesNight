@@ -19,7 +19,6 @@ export class NewEvent extends Component {
 
   clickHandler () {
     addEvent(this.state)
-    console.log(this.state)
   }
 
   render () {
