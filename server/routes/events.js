@@ -35,6 +35,7 @@ router.post('/newEvent', (req, res) => {
   //   event_name: 'killer Catan',
   //   date: '25-01-2020'
   // }
+  console.log('we have made it to the routes')
   const newEvent = req.body
   db.addEvent(newEvent)
   .then(event => {

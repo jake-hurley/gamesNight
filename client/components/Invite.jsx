@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router"
 
-import { getAttendees  } from '../api/api'
+import { getAttendees, inviteUser  } from '../api/api'
 
 export class Invite extends Component {
 
@@ -21,15 +21,16 @@ export class Invite extends Component {
     }
 
     clickHandler = () => {
-          console.log(this.state)
+        //   console.log(this.state)
           getAttendees(this.state.event_id)
           .then(attendees => {
               attendees.map(user => {
                 if(user.name === this.state.inviteUser) {
                     alert('user has already been invited')
-                    return
+                // ADD ELSE IF FOR IF USER IS NOT IN USERS TABLE
                 } else {
-                    console.log('pass')
+                    inviteUser(this.state.event_id, this.state.inviteUser)
+                    console.log('react pass')
                 }
               })  
           })

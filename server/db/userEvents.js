@@ -16,18 +16,29 @@ function getAttendees (eventId, db = connection) {
     .select('id', 'event_id', 'name', 'user_id')
 }
 
-function inviteUser (eventId, userName, db = connnection) {
-  return db('userEvents')
-  .join('events', 'event_id', 'EventId')
-  .join('users', 'user_id', 'userId')
-  .insert({
-    event_id: eventId,
-    user_id: userId    
-})
+function inviteUser (eventId, userName, db = connection) {
+  console.log('db pass')
+  getUserByName(userName)
+  .then(response => {
+    console.log(response)
+    return db('userEvents')
+    .join('events', 'event_id', 'EventId')
+    .join('users', 'user_id', 'userId')
+    .insert({
+      event_id: eventId,
+      user_id: response.userId    
+  })
+  })
+ 
+}
 
+function getUserByName (userName, db = connection) {
+  return db('users')
+  .where('name', userName).select('name', 'userId')
 }
 
 module.exports = {
   getUserEvents,
-  getAttendees
+  getAttendees,
+  inviteUser
 }

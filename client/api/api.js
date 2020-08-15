@@ -22,24 +22,15 @@ export function getUserEvents(userId) {
 }
 
 export function addEvent (eventObject) {
-    console.log(eventObject)
-    const { event_name, date, game } = eventObject
+    console.log(JSON.stringify(eventObject))
     return request
     .post(`${baseURL}/newEvent`)
-    // .set(acceptJsonHeader)
     .type('form')
-    // .type('application/json')
-    .send({
-        event_name,
-        date,
-        game
+    .set('Content-Type', 'application/x-www-form-urlencoded')
+    .send(eventObject)
+    .end(function(err, res){
+    console.log(res.error)
     })
-    .then(response => {
-        console.log(response)
-      return response
-    //   console.log('pass')
-    })
-    .catch(err => console.log('Error logging ', err))
 }
 
 export function getEventById (eventId) {
@@ -51,7 +42,11 @@ export function getEventById (eventId) {
     })
 }
 
-export function checkIfInvited (eventId, userName) {
+export function inviteUser (eventId, userName) {
+    console.log(eventId, userName)
+    let userObject = {eventId, userName}
     return request
-    .get(`${baseURL}/${eventId}/${userName}`)
+    .post(`${baseURL}/userEvents/${eventId}/${userName}`)
+    .send({'eventId': eventId, 'userName': userName})
+    console.log('api pass')
 }
