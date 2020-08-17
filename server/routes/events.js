@@ -3,6 +3,9 @@ const express = require('express')
 const db = require('../db/events')
 
 const router = express.Router()
+var bodyParser = require('body-parser')
+
+router.use(bodyParser.json())
 
 router.get('/event', (req, res) => {
 
@@ -30,12 +33,7 @@ router.get('/event/:eventId', (req, res) => {
   })
 })
 
-router.post('/newEvent', (req, res) => {
-  // const newEvent = {
-  //   event_name: 'killer Catan',
-  //   date: '25-01-2020'
-  // }
-  console.log('we have made it to the routes')
+router.post('/events/newEvent', (req, res) => {
   const newEvent = req.body
   db.addEvent(newEvent)
   .then(event => {

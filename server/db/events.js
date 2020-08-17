@@ -10,13 +10,13 @@ function getEventById (eventId, db = connection) {
 }
 
 function addEvent (eventObject, db = connection) {
-  console.log(eventObject)
-  eventObject = JSON.parse(eventObject)
+  // eventObject = JSON.parse(eventObject)
   console.log(eventObject)
   return db('events')
   .insert({ 
       event_name: eventObject.event_name,
       date: eventObject.date,  
+      game: eventObject.game
     })
   }
 

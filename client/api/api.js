@@ -22,15 +22,13 @@ export function getUserEvents(userId) {
 }
 
 export function addEvent (eventObject) {
-    console.log(JSON.stringify(eventObject))
-    return request
-    .post(`${baseURL}/newEvent`)
-    .type('form')
-    .set('Content-Type', 'application/x-www-form-urlencoded')
-    .send(eventObject)
-    .end(function(err, res){
-    console.log(res.error)
-    })
+   return request
+  .post(`${baseURL}/events/newEvent`)
+  .send(eventObject)
+  .end((err, res) => {
+    if(err) console.log(err)
+    console.log(res)
+  })
 }
 
 export function getEventById (eventId) {
@@ -44,7 +42,10 @@ export function getEventById (eventId) {
 
 export function inviteUser (eventId, userName) {
     let userObject = {eventId, userName}
-    return request
+    console.log(`${baseURL}/userEvents/${eventId}/${userName}`)
+    request
     .post(`${baseURL}/userEvents/${eventId}/${userName}`)
-    .send(JSON.stringify(userObject))
+    .end((err, res) => {
+        console.log(res)
+    })
 }
