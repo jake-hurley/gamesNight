@@ -43,10 +43,8 @@ export function getEventById (eventId) {
 }
 
 export function inviteUser (eventId, userName) {
-    console.log(eventId, userName)
     let userObject = {eventId, userName}
     return request
     .post(`${baseURL}/userEvents/${eventId}/${userName}`)
-    .send({'eventId': eventId, 'userName': userName})
-    console.log('api pass')
+    .send(JSON.stringify(userObject))
 }

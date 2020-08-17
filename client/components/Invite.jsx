@@ -21,7 +21,6 @@ export class Invite extends Component {
     }
 
     clickHandler = () => {
-        //   console.log(this.state)
           getAttendees(this.state.event_id)
           .then(attendees => {
               attendees.map(user => {
@@ -30,7 +29,6 @@ export class Invite extends Component {
                 // ADD ELSE IF FOR IF USER IS NOT IN USERS TABLE
                 } else {
                     inviteUser(this.state.event_id, this.state.inviteUser)
-                    console.log('react pass')
                 }
               })  
           })

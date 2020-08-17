@@ -22,14 +22,15 @@ router.get('/userEvents/attendees/:eventId', (req, res) => {
 })
 
 router.post('/userEvents/:eventId/:userName', (req, res) => {
-    console.log('hello')
     const eventId = req.params.eventId
     const userName = req.params.userName
-    db.inviteUser(eventId, userName)
+    db.getUserByName(userName)
     .then(response => {
-        console.log('route pass')
-        res.status(200).json(repsonse)
+        db.inviteUser(eventId, response.userId)
+        .then(response => {
+            res.status(200).json(response)
     })
+})
 })
 
 module.exports = router

@@ -1,4 +1,5 @@
 const connection = require('./connection')
+const { first } = require('./connection')
 
 function getUserEvents (userId, db = connection) {
   return db('userEvents')
@@ -16,29 +17,24 @@ function getAttendees (eventId, db = connection) {
     .select('id', 'event_id', 'name', 'user_id')
 }
 
-function inviteUser (eventId, userName, db = connection) {
-  console.log('db pass')
-  getUserByName(userName)
-  .then(response => {
-    console.log(response)
+function inviteUser (eventId, userId, db = connection) {
     return db('userEvents')
     .join('events', 'event_id', 'EventId')
     .join('users', 'user_id', 'userId')
     .insert({
       event_id: eventId,
-      user_id: response.userId    
+      user_id: userId    
   })
-  })
- 
 }
 
 function getUserByName (userName, db = connection) {
   return db('users')
-  .where('name', userName).select('name', 'userId')
+  .where('name', userName).first()
 }
 
 module.exports = {
   getUserEvents,
   getAttendees,
-  inviteUser
+  inviteUser,
+  getUserByName
 }
