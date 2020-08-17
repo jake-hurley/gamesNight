@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-
-import { addEvent } from '../api/api'
+import { withRouter } from "react-router"
+import { addEvent, inviteUser, getAttendees } from '../api/api'
 
 export class NewEvent extends Component {
 
   state = {
     event_name: '',
     game: '',
-    date: ''
+    date: '',
+  }
+
+  componentDidMount() {
+    const userName = this.props.match.params.userName
+    this.setState({
+      userName: userName
+    })
   }
 
   changeHandler = (ev) => {
@@ -19,6 +26,11 @@ export class NewEvent extends Component {
 
   clickHandler () {
     addEvent(this.state)
+    // ADDS CREATOR AS AN ATTENDEE TO THIS EVENT
+    .then(response => {
+      inviteUser(response, this.state.userName)
+    })
+    
   }
 
   render () {
@@ -43,4 +55,4 @@ export class NewEvent extends Component {
   }
 }
 
-export default NewEvent
+export default withRouter(NewEvent)

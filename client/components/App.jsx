@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Router>
         <Route exact path="/" component={Home} />
-        <Route exact path="/user/newEvent" component={NewEvent} />
+        <Route exact path="/user/:userName/newEvent" component={NewEvent} />
         <Route path="/user/event/:eventId" component={Event} />
       </Router>
     </>

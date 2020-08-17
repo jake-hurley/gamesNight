@@ -10,8 +10,10 @@ export class UpcomingEvents extends Component {
     componentDidMount() {
         getUserEvents(1)
         .then(response => {
+            console.log(response)
             this.setState({
-                events: response
+                events: response,
+                userName: response[0].name
             })
         })
     }
@@ -30,7 +32,7 @@ export class UpcomingEvents extends Component {
                     </div>
                     )
               })}
-          <Link to={`/user/newEvent`}><button>Create Event</button></Link>
+          <Link to={`/user/${this.state.userName}/newEvent`}><button>Create Event</button></Link>
       </div>
     )
   }

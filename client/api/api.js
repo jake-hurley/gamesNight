@@ -1,5 +1,5 @@
 import request from 'superagent'
-import consume from './requestor'
+
 
 const baseURL = 'http://localhost:3000/api/v1'
 
@@ -25,9 +25,9 @@ export function addEvent (eventObject) {
    return request
   .post(`${baseURL}/events/newEvent`)
   .send(eventObject)
-  .end((err, res) => {
-    if(err) console.log(err)
-    console.log(res)
+  .then(res => {
+    //RETURNS EVENT ID SO THAT CREATOR CAN BE ADDED AS ATTENDEE
+    return res.body[0]
   })
 }
 

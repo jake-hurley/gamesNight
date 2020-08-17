@@ -1,12 +1,12 @@
 const connection = require('./connection')
-const { first } = require('./connection')
+// const { first } = require('./connection')
 
 function getUserEvents (userId, db = connection) {
   return db('userEvents')
     .join('users', 'user_id', 'userId')
     .join('events', 'event_id', 'EventId')
     .where('user_id', userId)
-    .select('eventId', 'event_name', 'date', 'name')
+    .select('eventId', 'event_name', 'date', 'name', 'userId')
 }
 
 function getAttendees (eventId, db = connection) {
