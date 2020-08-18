@@ -18,7 +18,7 @@ export class Login extends Component {
     }
 
     clickHandler = () => {
-        getUsers(this.state.userName, this.state.password)
+        getUsers()
         .then(users => {
             for(var i = 0; i < users.length; i++){
                 if((users[i].name === this.state.userName) && (users[i].password === this.state.password)) {
@@ -39,7 +39,8 @@ export class Login extends Component {
                 <input onChange={this.changeHandler} name='userName' placeholder='userName'></input>
                 <input onChange={this.changeHandler} name='password' placeholder='password'></input>
                 <button onClick={() => this.clickHandler()}>Login</button>
-                <Link to='/register'><button>Register</button></Link>
+                <h5>New here?</h5>
+                <Link to='/user/register'><button>Register</button></Link>
             </div>
         )
     }

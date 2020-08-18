@@ -3,6 +3,7 @@ const express = require('express')
 const db = require('../db/userEvents')
 
 const router = express.Router()
+var bodyParser = require('body-parser')
 
 router.get('/userEvents/:userId', (req, res) => {
     const userId = req.params.userId

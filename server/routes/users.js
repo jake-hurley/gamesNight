@@ -3,6 +3,7 @@ const express = require('express')
 const db = require('../db/users')
 
 const router = express.Router()
+const bodyParser = require('body-parser')
 
 router.get('/users', (req, res) => {
     db.getUsers()
@@ -22,6 +23,20 @@ router.get('/users/:userId', (req, res) => {
         if(response)
         res.status(200).json(response)
         else res.status(500).json('User does not exist!')
+    })
+    .catch(err => {
+        console.error(err.message)
+        res.status(500).json("An unexpected error has occurred and we're looking into it")
+      })
+})
+
+
+router.post('/users/register', (req, res) => {
+    const newUser = req.body
+    console.log(newUser)
+    db.addUser(newUser)
+    .then(response => {
+        res.status(200).json(response)
     })
     .catch(err => {
         console.error(err.message)

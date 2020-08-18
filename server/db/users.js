@@ -9,7 +9,18 @@ function getUserById (id, db = connection) {
     .where('id', id).first()
 }
 
+function addUser (newUser, db = connection) {
+  console.log(newUser)
+  const { userName, password } = newUser
+  return db('users')
+  .insert({
+    name: userName,
+    password: password
+  })
+}
+
 module.exports = {
   getUsers,
-  getUserById
+  getUserById,
+  addUser
 }

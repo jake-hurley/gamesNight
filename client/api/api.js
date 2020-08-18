@@ -49,10 +49,19 @@ export function inviteUser (eventId, userName) {
     })
 }
 
-export function getUsers(userName, password) {
+export function getUsers() {
     return request
     .get(`${baseURL}/users`)
     .then(response => {
         return response.body
+    })
+}
+
+export function addUser(newUser) {
+    request
+    .post(`${baseURL}/users/register`)
+    .send(newUser)
+    .end((err, res) => {
+        console.log(res)
     })
 }
