@@ -26,10 +26,13 @@ router.post('/userEvents/:eventId/:userName', (req, res) => {
     const userName = req.params.userName
     db.getUserByName(userName)
     .then(response => {
+        if(response){
         db.inviteUser(eventId, response.userId)
         .then(response => {
             res.status(200).json(response)
+            
     })
+    } else console.log('user does not exist!')
 })
 })
 

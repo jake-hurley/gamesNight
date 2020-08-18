@@ -42,7 +42,6 @@ export function getEventById (eventId) {
 
 export function inviteUser (eventId, userName) {
     let userObject = {eventId, userName}
-    console.log(`${baseURL}/userEvents/${eventId}/${userName}`)
     request
     .post(`${baseURL}/userEvents/${eventId}/${userName}`)
     .end((err, res) => {

@@ -23,14 +23,15 @@ export class Invite extends Component {
     clickHandler = () => {
           getAttendees(this.state.event_id)
           .then(attendees => {
-              attendees.map(user => {
-                if(user.name === this.state.inviteUser) {
-                    alert('user has already been invited')
-                // ADD ELSE IF FOR IF USER IS NOT IN USERS TABLE
-                } else {
-                    inviteUser(this.state.event_id, this.state.inviteUser)
-                }
-              })  
+                  for(var i = 0; i < attendees.length; i++){
+                    if(attendees[i].name === this.state.inviteUser) {
+                        alert('User has already been invited')
+                        break
+                    } else {
+                        inviteUser(this.state.event_id, this.state.inviteUser)
+                        break
+                    }
+                  }
           })
 
     }
