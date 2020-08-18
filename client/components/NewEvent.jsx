@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router"
+import { Link, useHistory } from 'react-router-dom'
+
 import { addEvent, inviteUser, getAttendees } from '../api/api'
 
 export class NewEvent extends Component {
@@ -30,7 +32,7 @@ export class NewEvent extends Component {
     .then(response => {
       inviteUser(response, this.state.userName)
     })
-    
+    setTimeout(() => this.props.history.push("/"), 100)    
   }
 
   render () {
@@ -48,8 +50,8 @@ export class NewEvent extends Component {
           <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
 
         </select>
-        <button onClick={() => this.clickHandler()}>Create Event!</button>
-
+        <button onClick={() => this.clickHandler()}>     
+        Create Event!</button>
       </div>
     )
   }

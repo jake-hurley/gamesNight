@@ -10,7 +10,6 @@ export class UpcomingEvents extends Component {
     componentDidMount() {
         getUserEvents(1)
         .then(response => {
-            console.log(response)
             this.setState({
                 events: response,
                 userName: response[0].name
