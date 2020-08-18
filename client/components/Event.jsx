@@ -16,7 +16,6 @@ export class Event extends Component {
 
   componentDidMount () {
     const eventId = this.props.match.params.eventId
-    console.log(eventId)
     this.getEventData(eventId)
   }
 
@@ -54,7 +53,6 @@ export class Event extends Component {
             )
           })}
         </ul>
-        <button onClick={() => this.clickHandler()}>Invite Someone</button>
         <Invite />
       </div>
     )

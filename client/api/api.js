@@ -48,3 +48,11 @@ export function inviteUser (eventId, userName) {
         console.log(res)
     })
 }
+
+export function getUsers(userName, password) {
+    return request
+    .get(`${baseURL}/users`)
+    .then(response => {
+        return response.body
+    })
+}

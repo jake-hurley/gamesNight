@@ -8,7 +8,8 @@ export class UpcomingEvents extends Component {
         events: []
     }
     componentDidMount() {
-        getUserEvents(1)
+        const userId = this.props.data
+        getUserEvents(userId)
         .then(response => {
             this.setState({
                 events: response,

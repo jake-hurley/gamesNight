@@ -3,17 +3,20 @@ import React, { Component } from 'react'
 import { getUserEvents } from '../api/api'
 import UpcomingEvents from './UpcomingEvents'
 
-export class Home extends Component {
 
+export class Home extends Component {
   state = {
     name: ''
   }
 
+  userId = this.props.match.params.userId
+
   componentDidMount () {
-  getUserEvents(1)
+  getUserEvents(this.userId)
   .then(response => { 
     this.setState({
-      name: response[0].name
+      name: response[0].name,
+      userId: this.userId
     })
   })
   }
@@ -22,7 +25,7 @@ export class Home extends Component {
     return (
     <>
       <h1>Gday {this.state.name}</h1>
-      <UpcomingEvents />
+      <UpcomingEvents data={this.userId} />
     
     </>
     )

@@ -32,8 +32,8 @@ export class Invite extends Component {
                         break
                     }
                   }
-          })
-
+          }
+          )   
     }
 
   render () {
