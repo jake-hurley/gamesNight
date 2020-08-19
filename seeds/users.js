@@ -7,7 +7,8 @@ exports.seed = function (knex) {
         { userId: 1, name: 'Jake', password: 'hurley' },
         { userId: 2, name: 'Pete', password: 'Mcnie' },
         { userId: 3, name: 'Johny', password:'jboy123' },
-        { userId: 4, name: 'Ariana', password: 'mirus420' }
+        { userId: 4, name: 'Ariana', password: 'mirus420' },
+        { userId: 5, name: 'Eryn', password: 'coolbeans' }
       ])
     })
 }
