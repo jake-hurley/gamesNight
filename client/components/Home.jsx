@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { getUserEvents, getUserById } from '../api/api'
 import UpcomingEvents from './UpcomingEvents'
@@ -35,6 +36,7 @@ export class Home extends Component {
     <>
       <h1>Gday {this.state.name}</h1>
       <UpcomingEvents data={this.userId} />
+      <Link to='/'><p>Log out</p></Link>
     
     </>
     )
