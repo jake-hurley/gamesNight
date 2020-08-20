@@ -16,25 +16,19 @@ export class Register extends Component {
         this.setState({
             [name]: value
         })
-        console.log(this.state)
     }
 
     clickHandler = () => {
         if (this.state.password === this.state.passwordCheck) {
         getUsers()
         .then(users => {
-            for(var i = 0; i < users.length; i++){
-                if(users[i].name !== this.state.userName) {
-                    addUser(this.state)
-                    break
-                } else {
-                    alert('userName is taken') 
-                    break 
-                } 
-            } 
+            let userNameCheck = users.filter(user => user.name === this.state.userName)
+            if (userNameCheck.length >= 1) {
+                alert('username already exists')
+            } else addUser(this.state)
         })
-    } else alert('password doesnt match')
     }
+}
 
     render () {
         return (

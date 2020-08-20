@@ -6,7 +6,7 @@ function getUsers (db = connection) {
 
 function getUserById (id, db = connection) {
   return db('users')
-    .where('id', id).first()
+    .where('userId', id).first()
 }
 
 function addUser (newUser, db = connection) {

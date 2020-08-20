@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { getUserEvents } from '../api/api'
+import { getUserEvents, getUserById } from '../api/api'
 import UpcomingEvents from './UpcomingEvents'
 
 
@@ -12,12 +12,21 @@ export class Home extends Component {
   userId = this.props.match.params.userId
 
   componentDidMount () {
+  const userId = this.props.match.params.userId
+  getUserById(userId)
+  .then(user => {
+      this.setState({
+          name: user.name
+      })
+  })
   getUserEvents(this.userId)
   .then(response => { 
-    this.setState({
-      name: response[0].name,
-      userId: this.userId
+    if(response.length >= 1) {
+      this.setState({
+        name: response[0].name,
+        userId: this.userId
     })
+    }
   })
   }
 

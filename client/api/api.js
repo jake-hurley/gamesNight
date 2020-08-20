@@ -35,7 +35,6 @@ export function getEventById (eventId) {
     return request
     .get(`${baseURL}/event/${eventId}`)
     .then(response => {
-        console.log(response)
         return response.body
     })
 }
@@ -57,6 +56,14 @@ export function getUsers() {
     })
 }
 
+export function getUserById(userId) {
+    return request
+    .get(`${baseURL}/users/${userId}`)
+    .then(response => {
+        return response.body
+    })
+}
+
 export function addUser(newUser) {
     request
     .post(`${baseURL}/users/register`)
@@ -65,3 +72,5 @@ export function addUser(newUser) {
         console.log(res)
     })
 }
+
+

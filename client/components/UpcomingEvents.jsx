@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getUserEvents } from '../api/api'
+import { getUserEvents, getUserById } from '../api/api'
 
 export class UpcomingEvents extends Component {
     state = {
@@ -10,10 +10,9 @@ export class UpcomingEvents extends Component {
     componentDidMount() {
         const userId = this.props.data
         getUserEvents(userId)
-        .then(response => {
+        .then(events => {
             this.setState({
-                events: response,
-                userName: response[0].name
+                events: events
             })
         })
     }

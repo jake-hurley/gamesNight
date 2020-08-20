@@ -9,6 +9,10 @@ export class Login extends Component {
         password: ''
     }
 
+    componentDidMount () {
+        getUsers()
+    }
+
     changeHandler = (ev) => {
         const { name, value } = ev.target
         this.setState({
@@ -24,8 +28,7 @@ export class Login extends Component {
                     this.props.history.push(`/home/${users[i].userId}`)
                     break
                 } else {
-                    alert('Username or password is incorrect')
-                    break
+                    console.log('Username or password is incorrect')
                 }
             }
         })
