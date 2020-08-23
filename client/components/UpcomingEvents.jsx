@@ -20,16 +20,20 @@ export class UpcomingEvents extends Component {
 
   render () {
     return (
-      <div>
-          <h1>Upcoming Events</h1>
+      <div className='upcoming-events'>
+          <h1 className='upcoming-events-title'>Upcoming Events</h1>
               {this.state.events.map(event => {
-                  return ( 
-                    <div className='event' key={event.eventId}>
-                        <Link to={`/user/event/${event.eventId}`}>
-                            <h3 key={event.eventId}>{event.event_name}</h3>
-                        </Link>
-                        <h5 key={event.eventId}>{event.date}</h5>
-                    </div>
+                  return (
+                    <Link className='event-link' to={`/user/event/${event.eventId}`}> 
+                        <div className='event' key={event.eventId}>
+                            <h5 className='event-date' key={event.eventId}>{event.date}</h5>
+                            <div className='event-details'>
+                                <h3 className='event-name' key={event.eventId}>{event.event_name}</h3>
+                                <h3 className='event-attendees'>7 Going</h3>
+                            </div>
+                            <img className='event-icon' src='Ellipse.svg'/>
+                        </div>
+                    </Link>
                     )
               })}
           <Link to={{ pathname : `/user/newEvent`, state: this.props.data}}><button>Create Event</button></Link>

@@ -39,8 +39,9 @@ export class Home extends Component {
     <>
       <div className='header-container'>
         <h1 className='name'>Gday {this.state.name}</h1>
-        <h2>{this.state.date}</h2>
-        <Link className='logout' to='/'><p>Log out</p></Link>
+        <Link className='logout' to='/'>Log out</Link>
+        <h2 className='date'>{this.state.date}</h2>
+        <Link className='new-event' to={{ pathname : `/user/newEvent`, state: this.props.data}}>Create Event</Link>
       </div>
       <UpcomingEvents data={this.props.data} />
     </>

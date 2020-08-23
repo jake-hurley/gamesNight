@@ -6,6 +6,96 @@ body {
 }
 
 
+/* HOME */
+
 .header-container {
   background: red;
+  margin: 0;
 }
+
+.name {
+  display: inline-block;
+  font-size: 2.5em;
+  width: 50%;
+  margin: 3% 0 0 3%;
+}
+
+.logout {
+  display: inline-block;
+  background: white;
+  font-size: 1.2em;
+  color: black;
+  text-align: right;
+  border-radius: 15px;
+  padding:1%;
+  margin-left: 27%;
+  text-decoration: none;
+}
+
+.date{
+  display: inline-block;
+  margin: 5% 0 5% 4% ;
+}
+
+.new-event {
+  background: white;
+  font-size: 1.5em;
+  color: black;
+  padding: 1%;
+  margin-left: 35%;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+/* UPCOMING EVENTS */
+
+.upcoming-events {
+  width: 80%;
+}
+
+.upcoming-events-title {
+  margin-left: 3%; 
+}
+
+.event {
+  border: 2px solid black;
+  margin: 0 0 2% 3%;
+
+}
+
+.event-date {
+  display: inline-block;
+  border-right: 2px solid black;
+  font-size: 1.2em;
+  padding: 4%;
+  width: 10%;
+  margin: 0;
+}
+
+.event-details {
+  display: inline-block;
+  width: 60%;
+}
+
+.event-name {
+  display: inline-block;
+  width: 80%;
+  margin: 0 0 5% 5%;
+  font-size: 1.2em;
+
+}
+
+.event-attendees {
+  display: inline-block;
+  text-align: right;
+  width: 70%;
+  margin: 0 0 5% 5%;
+  font-size: 1.2em;
+}
+
+.event-icon {
+  width: 17%;
+}
+
+
+
