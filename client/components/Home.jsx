@@ -10,10 +10,12 @@ export class Home extends Component {
     name: ''
   }
 
-  userId = this.props.match.params.userId
+  userId = this.props.data.userId
 
   componentDidMount () {
-  const userId = this.props.match.params.userId
+  const userId = this.props.data.userId
+  console.log(userId)
+  // const userId = this.props.match.params.userId
   getUserById(userId)
   .then(user => {
       this.setState({
@@ -35,7 +37,7 @@ export class Home extends Component {
     return (
     <>
       <h1>Gday {this.state.name}</h1>
-      <UpcomingEvents data={this.userId} />
+      <UpcomingEvents data={this.props.data} />
       <Link to='/'><p>Log out</p></Link>
     
     </>

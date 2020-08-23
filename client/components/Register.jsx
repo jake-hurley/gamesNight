@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getUsers,addUser } from '../api/api'
 
 
+
 export class Register extends Component {
 
     state = {
@@ -34,8 +35,8 @@ export class Register extends Component {
             <div>
                 <h3>New User</h3>
                 <input onChange={this.changeHandler} name='userName' placeholder='userName'></input>
-                <input onChange={this.changeHandler} name='password' placeholder='password'></input>
-                <input onChange={this.changeHandler} name='passwordCheck' placeholder='re-enter password'></input>
+                <input type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
+                <input type='password' onChange={this.changeHandler} name='passwordCheck' placeholder='re-enter password'></input>
                 <button onClick={() => this.clickHandler()}>Register</button>
             </div>
         )

@@ -13,7 +13,8 @@ export class NewEvent extends Component {
   }
 
   componentDidMount() {
-    const userName = this.props.match.params.userName
+    const userName = this.props.location.state.name
+    console.log(userName)
     this.setState({
       userName: userName
     })

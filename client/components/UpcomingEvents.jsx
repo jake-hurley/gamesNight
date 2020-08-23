@@ -8,7 +8,8 @@ export class UpcomingEvents extends Component {
         events: []
     }
     componentDidMount() {
-        const userId = this.props.data
+        const userId = this.props.data.userId
+        console.log(this.props.data)
         getUserEvents(userId)
         .then(events => {
             this.setState({
@@ -31,7 +32,7 @@ export class UpcomingEvents extends Component {
                     </div>
                     )
               })}
-          <Link to={`/user/${this.state.userName}/newEvent`}><button>Create Event</button></Link>
+          <Link to={{ pathname : `/user/newEvent`, state: this.props.data}}><button>Create Event</button></Link>
       </div>
     )
   }
