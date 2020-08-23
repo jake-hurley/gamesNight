@@ -24,7 +24,7 @@ export class UpcomingEvents extends Component {
           <h1>Upcoming Events</h1>
               {this.state.events.map(event => {
                   return ( 
-                    <div key={event.eventId}>
+                    <div className='event' key={event.eventId}>
                         <Link to={`/user/event/${event.eventId}`}>
                             <h3 key={event.eventId}>{event.event_name}</h3>
                         </Link>
