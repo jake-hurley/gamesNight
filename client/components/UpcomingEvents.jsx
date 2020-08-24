@@ -1,22 +1,53 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import { getUserEvents, getUserById } from '../api/api'
+import { getUserEvents, getAttendees } from '../api/api'
 
 export class UpcomingEvents extends Component {
     state = {
-        events: []
+        events: [],
+        attendeeCount: []
     }
+
     componentDidMount() {
+        this.getEvents()
+    }
+
+
+
+    getEvents = () => {
         const userId = this.props.data.userId
-        console.log(this.props.data)
         getUserEvents(userId)
         .then(events => {
             this.setState({
                 events: events
             })
         })
+        
     }
+
+    goingCount = () => {
+        this.state.events.map(event => {
+            this.getAttendees(event.eventId)
+            .then(guests => {
+                this.setState({
+                    going: [...this.state.going, guests.length]
+                })
+            })
+            console.log(this.state)
+    })
+}
+
+    dateConvert = (event, date) => {
+        const dates = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ]
+        let dateSplit = date.split('-')
+        let dateIndex = Number(dateSplit[1] - 1)
+        let newDate = dates[dateIndex] + ' ' + dateSplit[2] 
+        return newDate
+    }
+
 
   render () {
     return (
@@ -29,17 +60,17 @@ export class UpcomingEvents extends Component {
                             <h5 className='event-date' key={event.eventId}>{event.date}</h5>
                             <div className='event-details'>
                                 <h3 className='event-name' key={event.eventId}>{event.event_name}</h3>
-                                <h3 className='event-attendees'>7 Going</h3>
+                                <h3 className='event-attendees'>{} Going</h3>
                             </div>
                             <img className='event-icon' src='Ellipse.svg'/>
                         </div>
                     </Link>
                     )
-              })}
-          <Link to={{ pathname : `/user/newEvent`, state: this.props.data}}><button>Create Event</button></Link>
+              })
+            }
       </div>
-    )
-  }
+      )
+    }
 }
 
 export default UpcomingEvents

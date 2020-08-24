@@ -17,6 +17,9 @@ export function getUserEvents(userId) {
     return request
     .get(`${baseURL}/userEvents/${userId}`)
     .then(response => {
+        response.body.map(event => {
+            event.date = dateConvert(event.date)
+        })
         return response.body
     })
 }
@@ -35,6 +38,7 @@ export function getEventById (eventId) {
     return request
     .get(`${baseURL}/event/${eventId}`)
     .then(response => {
+        
         return response.body
     })
 }
@@ -72,5 +76,18 @@ export function addUser(newUser) {
         console.log(res)
     })
 }
+
+
+
+function dateConvert (date) {
+    const dates = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ]
+    let dateSplit = date.split('-')
+    let dateIndex = Number(dateSplit[1] - 1)
+    let newDate = dates[dateIndex] + ' ' + dateSplit[2] 
+    return newDate
+}
+
 
 

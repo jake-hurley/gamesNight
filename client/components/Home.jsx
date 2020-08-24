@@ -15,7 +15,7 @@ export class Home extends Component {
 
   componentDidMount () {
   const userId = this.props.data.userId
-  console.log(userId)
+  // console.log(userId)
   // const userId = this.props.match.params.userId
   getUserById(userId)
   .then(user => {
