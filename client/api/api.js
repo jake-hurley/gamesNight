@@ -17,8 +17,14 @@ export function getUserEvents(userId) {
     return request
     .get(`${baseURL}/userEvents/${userId}`)
     .then(response => {
+        // CONVERT DATE MONTH TO WORD
         response.body.map(event => {
             event.date = dateConvert(event.date)
+        // GET THE GUEST COUNT FOR THE EVENT
+            getAttendees(event.eventId)
+            .then(guestCount => {
+                event.guestCount = guestCount.length
+            })
         })
         return response.body
     })
@@ -76,8 +82,6 @@ export function addUser(newUser) {
         console.log(res)
     })
 }
-
-
 
 function dateConvert (date) {
     const dates = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
