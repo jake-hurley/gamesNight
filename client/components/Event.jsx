@@ -42,19 +42,31 @@ export class Event extends Component {
   
   render () {
     return (
-      <div>
-        <h3>{this.state.event_name}</h3>
-        <h4>When: {this.state.date}</h4>
-        <h4>Playing: {this.state.game}</h4>
-        <ul>
-          {this.state.attendees.map(user => {
-            return(
-              <li key={user.id}>{user.name}</li>
-            )
-          })}
-        </ul>
-        <Invite />
-      </div>
+      <>
+        <div className='header'>
+          <p>header</p>
+        </div>
+        <div className='event-container'>
+          <h3 className='event-title'>{this.state.event_name}</h3>
+          <h4 className='date'>{this.state.date}</h4>
+          <h4 className='location'>Location</h4>
+          <h4 className='game'>Playing: {this.state.game}</h4>
+          <p className='event-description'>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div className='attendees-container'>
+            <h4 className='attendees-title'>Attendees</h4>
+            <ul className='attendees-list'>
+              {this.state.attendees.map(user => {
+                return(
+                  <li className='attendee' key={user.id}>{user.name}</li>
+                )
+              })}
+            </ul>
+          </div>
+          <Invite />
+        </div>
+    </>
     )
   }
 }

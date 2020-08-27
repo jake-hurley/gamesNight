@@ -15,9 +15,7 @@ export class UpcomingEvents extends Component {
             this.setState({
                 events: events
             })
-            console.log('function run')
         })
-      console.log('mounted')
     }
         
 
@@ -26,7 +24,6 @@ export class UpcomingEvents extends Component {
       <div className='upcoming-events'>
           <h1 className='upcoming-events-title'>Upcoming Events</h1>
               {this.state.events.map(event => {
-                  console.log(event)
                   return (
                     <Link className='event-link' to={`/user/event/${event.eventId}`}> 
                         <div className='event' key={event.eventId}>

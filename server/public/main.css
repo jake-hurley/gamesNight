@@ -64,6 +64,10 @@ body {
 
 }
 
+.event:hover {
+}
+
+
 .event-date {
   display: inline-block;
   border-right: 2px solid black;
@@ -97,6 +101,69 @@ body {
 .event-icon {
   width: 17%;
 }
+
+/* EVENT PAGE */
+
+.header {
+  background:red;
+}
+
+.event-title {
+  font-size: 2.2em;
+  margin: 5% 10% 2% 3%;
+}
+
+.date {
+ font-size: 1.5em;
+ margin: 0 0 2% 3%;
+}
+
+.location {
+  margin-left: 3%;
+}
+
+.game {
+  margin-left:3%;
+  margin-top: 0;
+}
+
+.event-description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  margin-left: 3%;
+  width: 60%;
+  display: inline-block;
+  border-bottom: 2px solid black;
+}
+
+.attendees-container {
+  display: inline-block;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  width: 30%;
+  height: 60vh;
+}
+
+.attendees-title {
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom:20%;
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+.attendees-list {
+  margin-top: 0;
+  list-style: none;
+  
+}
+
+.attendee {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 
 
