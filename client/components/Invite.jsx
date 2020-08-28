@@ -29,6 +29,7 @@ export class Invite extends Component {
                         break
                     } else {
                         inviteUser(this.state.event_id, this.state.inviteUser)
+                        getAttendees(this.state.event_id)
                         break
                     }
                   }

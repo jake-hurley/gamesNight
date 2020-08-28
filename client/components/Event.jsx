@@ -43,12 +43,13 @@ export class Event extends Component {
   render () {
     return (
       <>
-        <div className='header'>
+        <div className='header-container'>
           <p>header</p>
         </div>
         <div className='event-container'>
           <h3 className='event-title'>{this.state.event_name}</h3>
-          <h4 className='date'>{this.state.date}</h4>
+          <h4 className='date-time'>{this.state.date}</h4>
+          <img className='event-image' src='Ellipse.svg'/>
           <h4 className='location'>Location</h4>
           <h4 className='game'>Playing: {this.state.game}</h4>
           <p className='event-description'>

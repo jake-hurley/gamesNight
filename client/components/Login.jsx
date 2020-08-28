@@ -9,9 +9,9 @@ export class Login extends Component {
     state = {
         userName: '',
         password: '',
-        loginCheck: true,
-        // userData: {}
-        userData: { userId: 1, name: 'Jake', password: 'hurley'} 
+        loginCheck: false,
+        userData: {}
+        // userData: { userId: 1, name: 'Jake', password: 'hurley'} 
     }
 
     componentDidMount () {
