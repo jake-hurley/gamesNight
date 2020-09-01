@@ -16,7 +16,8 @@ function addEvent (eventObject, db = connection) {
   .insert({ 
       event_name: eventObject.event_name,
       date: eventObject.date,  
-      game: eventObject.game
+      game: eventObject.game,
+      description: eventObject.description
     })
   }
 

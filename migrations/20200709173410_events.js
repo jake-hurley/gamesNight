@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.string('event_name')
     table.string('game')
     table.date('date')
+    table.string('description')
   })
 }
 

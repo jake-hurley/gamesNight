@@ -34,8 +34,8 @@ export class Invite extends Component {
   render () {
     return (
     <div>
-        <input name='inviteUser' onChange={this.changeHandler} placeholder='Who would you like to invite?'></input>
-        <button onClick={() => this.clickHandler()}>Invite!</button>
+        <input className='invite-input' name='inviteUser' onChange={this.changeHandler} placeholder='Invite Someone!'></input>
+        <a className='invite-button' onClick={() => this.clickHandler()}>Invite!</a>
     </div>
     )
   }
