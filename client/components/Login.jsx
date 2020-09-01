@@ -9,9 +9,9 @@ export class Login extends Component {
     state = {
         userName: '',
         password: '',
-        loginCheck: false,
-        userData: {}
-        // userData: { userId: 1, name: 'Jake', password: 'hurley'} 
+        loginCheck: true,
+        // userData: {}
+        userData: { userId: 1, name: 'Jake', password: 'hurley'} 
     }
 
     componentDidMount () {
@@ -30,8 +30,6 @@ export class Login extends Component {
         .then(users => {
             for(var i = 0; i < users.length; i++){
                 if((users[i].name === this.state.userName) && (users[i].password === this.state.password)) {
-                    // this.props.history.push(`/home/${users[i].userId}`)
-                    // break
                     this.setState({
                         loginCheck: true,
                         userData: users[i]

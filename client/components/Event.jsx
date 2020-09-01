@@ -25,20 +25,35 @@ export class Event extends Component {
       this.setState({
         event_name: eventData.event_name,
         game: eventData.game,
-        date: eventData.date
+        date: eventData.date,
+        event_id: eventData.eventId
       })
     })
+
     getAttendees(event) 
-      .then(user => {
+      .then(users => {
         this.setState({
-          attendees: user
+          attendees: users
         })
       })
   }
 
+  changeHandler = (ev) => {
+    const { name, value } = ev.target
+    this.setState({
+        [name]: value
+    })
+}
+
   clickHandler = () => {
-    console.log('pass')
-  }
+    getAttendees(this.state.event_id)
+            .then(attendees => {
+              let found = attendees.find(user => user.name === this.state.inviteUser)
+              if(found) {
+                alert('user already exists')
+              }
+      })   
+    }
   
   render () {
     return (
@@ -49,7 +64,6 @@ export class Event extends Component {
         <div className='event-container'>
           <h3 className='event-title'>{this.state.event_name}</h3>
           <h4 className='date-time'>{this.state.date}</h4>
-          <img className='event-image' src='Ellipse.svg'/>
           <h4 className='location'>Location</h4>
           <h4 className='game'>Playing: {this.state.game}</h4>
           <p className='event-description'>
