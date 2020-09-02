@@ -49,13 +49,14 @@ export class Login extends Component {
 
         } else {
         return (
-            <div>
-                <h3>Login</h3>
-                <input onChange={this.changeHandler} name='userName' placeholder='userName'></input>
-                <input type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
-                <button onClick={() => this.clickHandler()}>Login</button>
-                <h5>New here?</h5>
-                <Link to='/user/register'><button>Register</button></Link>
+            <div className='login-container'>
+                {/* ADD LOGO OF GAMESNIGHT */}
+                <h3 className='login-title'>Login</h3>
+                <input className='user-input' onChange={this.changeHandler} name='userName' placeholder='userName'></input>
+                <input className='user-input' type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
+                <button className='login-button' onClick={() => this.clickHandler()}>Login</button>
+                <h5 className='new-here'>New here?</h5>
+                <Link className='register' to='/user/register'>Register</Link>
             </div>
         )
     }

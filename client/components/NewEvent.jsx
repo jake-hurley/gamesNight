@@ -38,11 +38,9 @@ export class NewEvent extends Component {
 
   render () {
     return (
-      <>
-        <div className='header-container' >
+        <div className='new-event-container' >
           <h1 className='new-event-title'>New Event</h1>
-        </div>
-          <input className='name-input' name='event_name' placeholder='Event Name' onChange={this.changeHandler}></input>
+          <input className='user-input' name='event_name' placeholder='Event Name' onChange={this.changeHandler}></input>
           <input className='date-input' name='date' type='date' placeholder='Date' onChange={this.changeHandler}></input>
           <input className='description-input' name='description' type='description' placeholder='Description' onChange={this.changeHandler}></input>
           <select className='game-dropdown' name='game' onChange={this.changeHandler}>
@@ -54,7 +52,7 @@ export class NewEvent extends Component {
             <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
           </select>
           <button className='new-event-button' onClick={() => this.clickHandler()}>Create Event!</button>
-        </>
+          </div>
     )
   }
 }

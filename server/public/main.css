@@ -6,6 +6,65 @@ body {
 }
 
 
+/* LOGIN PAGE */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  background: #00d499;
+}
+
+.login-title {
+  text-align: center;
+  font-size:2em;
+  margin-top:0;
+  padding-top: 50%;
+}
+
+.user-input {
+  display: block;
+  margin:3% auto;
+  width: 50%;
+  text-align: center;
+  font-size: 1.5em;
+  border:none;
+  border-radius: 14px;
+  padding:1%;
+}
+
+.login-button {
+  display: block;
+  font-size: 1.2em;
+  text-align: center;
+  width:30%;
+  margin:3% auto;
+  padding: 1%;
+  background: #fff;
+  border:none;
+  border-radius: 10px;
+}
+
+.new-here {
+  text-align: center;
+  font-size:1.5em;
+  margin-top:10%;
+  margin-bottom: 5%;
+}
+
+.register {
+  color: black;
+  text-decoration: none;
+  display: block;
+  font-size: 1.1em;
+  text-align: center;
+  width:25%;
+  margin:0 auto;
+  padding: 1%;
+  background: #fff;
+  border-radius: 10px;
+}
+
+
+
 /* HOME */
 
 .header-container {
@@ -66,12 +125,11 @@ body {
   color: black;
   border-radius: 15px;
   margin: 0 0 2% 3%;
-
 }
 
 .event:hover {
+  opacity: 0.5;
 }
-
 
 .event-date {
   display: inline-block;
@@ -213,53 +271,69 @@ body {
 
 /* NEW EVENT */
 
+input:focus {
+  outline: none;
+}
+
+.new-event-container {
+  height: 100vh;
+  width: 100vw;
+  background:#00d499;
+}
+
 .new-event-title {
   text-align: center;
-  margin:0 auto;
-  padding-top: 5%;
+  margin-top:0;
+  padding-top:50%;
   font-size: 2.5em;
   color: white;
 }
 
-.name-input {
-  margin:10% auto;
-  width: 50%;
-  display: block;
-  background: silver;
-  font-size: 1.5em;
-}
-
 .date-input {
-  margin:10% auto;
-  width: 50%;
   display: block;
-  background: silver;
+  margin:3% auto;
+  width: 50%;
+  text-align: center;
   font-size: 1.5em;
+  border:none;
+  border-radius: 14px;
+  padding:1%;
+  background: #fff;
 
 }
 
-.description-input {
-  margin:10% auto;
-  font-size: 1.5em;
-  width: 50%;
+.description-input,textarea {
   display: block;
-  background: silver;
+  margin:3% auto;
+  width: 50%;
+  font-size: 1.5em;
+  border:none;
+  border-radius: 14px;
+  padding:1% 1% 30% 1%;
+  background: #fff;
 }
 
 .game-dropdown {
-  margin: 10% auto;
+  margin: 3% auto;
   width: 50%;
   display: block;
   font-size: 1.5em;
-  background: silver;
+  border:none;
+  border-radius: 14px;
+  padding:1%;
+  background: #fff;
 }
 
 .new-event-button {
-  margin:10% auto;
-  font-size: 1.5em;
-  width: 50%;
   display: block;
-  background: silver;
+  font-size: 1.5em;
+  text-align: center;
+  width:50%;
+  margin:3% auto;
+  padding: 1%;
+  background: #fff;
+  border:none;
+  border-radius: 10px;
 }
 
 
