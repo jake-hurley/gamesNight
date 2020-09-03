@@ -27,6 +27,12 @@ export class NewEvent extends Component {
     })
   }
 
+  checkForInput = () => {
+    if (this.state.event_name.length > 0){
+
+    }
+  }
+
   clickHandler () {
     addEvent(this.state)
     // ADDS CREATOR AS AN ATTENDEE TO THIS EVENT
@@ -42,7 +48,7 @@ export class NewEvent extends Component {
           <h1 className='new-event-title'>New Event</h1>
           <input className='user-input' name='event_name' placeholder='Event Name' onChange={this.changeHandler}></input>
           <input className='date-input' name='date' type='date' placeholder='Date' onChange={this.changeHandler}></input>
-          <input className='description-input' name='description' type='description' placeholder='Description' onChange={this.changeHandler}></input>
+          <textarea className='description-input' name='description' type='description' placeholder='Description' onChange={this.changeHandler}/>
           <select className='game-dropdown' name='game' onChange={this.changeHandler}>
             <option>Game?</option>
             <option value='Mario Kart'>Mario Kart</option>

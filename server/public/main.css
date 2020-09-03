@@ -284,7 +284,7 @@ input:focus {
 .new-event-title {
   text-align: center;
   margin-top:0;
-  padding-top:50%;
+  padding-top:40%;
   font-size: 2.5em;
   color: white;
 }
@@ -302,7 +302,7 @@ input:focus {
 
 }
 
-.description-input,textarea {
+.description-input {
   display: block;
   margin:3% auto;
   width: 50%;
@@ -312,6 +312,11 @@ input:focus {
   padding:1% 1% 30% 1%;
   background: #fff;
 }
+
+.description-input:focus {
+  outline:none;
+}
+
 
 .game-dropdown {
   margin: 3% auto;
