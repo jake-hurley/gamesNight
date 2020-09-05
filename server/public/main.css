@@ -171,10 +171,16 @@ body {
   background:#00d499;
 }
 
+.back-arrow {
+  width: 10%;
+  padding-top: 4%;
+  padding-left: 3%;
+}
+
 .event-title {
   font-size: 2em;
   margin: 0 10% 2% 3%;
-  padding-top: 8%;
+  padding-top: 2%;
 }
 
 .event-image {
@@ -203,7 +209,7 @@ body {
   font-weight: 100;
   font-size: 1em;
   margin-left: 3%;
-  width: 60%;
+  width: 55%;
   /* display: inline-block; */
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { withRouter } from "react-router"
 import { getEventById, getAttendees } from '../api/api'
 
@@ -43,7 +44,7 @@ export class Event extends Component {
     return (
       <>
         <div className='header-container'>
-          {/* ADD ARROR TO RETURN HOME */}
+          <Link to='/'><img className='back-arrow' src='arrow.svg'/></Link>
           <h3 className='event-title'>{this.state.event_name}</h3>
           <h4 className='date-time'>{this.state.date}</h4>
         </div>
