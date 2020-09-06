@@ -16,6 +16,7 @@ export class Event extends Component {
 
 
   componentDidMount () {
+    // console.log(this.props)
     const eventId = this.props.match.params.eventId
     this.getEventData(eventId)
   }
@@ -44,7 +45,7 @@ export class Event extends Component {
     return (
       <>
         <div className='header-container'>
-          <Link to='/'><img className='back-arrow' src='arrow.svg'/></Link>
+          <Link to={{pathname:'/user/home', state:{userData: this.props.location.state.userData }}} ><img className='back-arrow' src='arrow.svg'/></Link>
           <h3 className='event-title'>{this.state.event_name}</h3>
           <h4 className='date-time'>{this.state.date}</h4>
         </div>

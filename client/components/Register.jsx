@@ -25,7 +25,10 @@ export class Register extends Component {
             let userNameCheck = users.filter(user => user.name === this.state.userName)
             if (userNameCheck.length >= 1) {
                 alert('username already exists')
-            } else addUser(this.state)
+            } else {
+                addUser(this.state)
+                this.props.history.push('/')
+            }
         })
     }
 }

@@ -14,7 +14,6 @@ export class NewEvent extends Component {
 
   componentDidMount() {
     const userName = this.props.location.state.name
-    console.log(userName)
     this.setState({
       userName: userName
     })
@@ -39,7 +38,9 @@ export class NewEvent extends Component {
     .then(response => {
       inviteUser(response, this.state.userName)
     })
-    setTimeout(() => this.props.history.push("/"), 100)    
+    setTimeout(() =>  this.props.history.push({ 
+      pathname: '/user/home', state: {userData: this.props.location.state}
+     }), 100)    
   }
 
   render () {

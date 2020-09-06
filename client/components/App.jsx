@@ -12,6 +12,7 @@ const App = () => {
     <>
       <Router>
         <Route exact path="/" component={Login} />
+        <Route exact path="/user/home" component={Home}/>
         <Route exact path="/user/register" component={Register} />
         {/* <Route exact path="/home/:userId" component={Home} /> */}
         <Route exact path="/user/newEvent" component={NewEvent} />

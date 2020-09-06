@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { withRouter } from "react-router"
+import { Link, Redirect } from 'react-router-dom'
 import { getUsers } from '../api/api'
 
 import Home from './Home'
@@ -9,9 +10,8 @@ export class Login extends Component {
     state = {
         userName: '',
         password: '',
-        loginCheck: true,
-        // userData: {}
-        userData: { userId: 1, name: 'Jake', password: 'hurley'} 
+        userData: {}
+        // userData: { userId: 1, name: 'Jake', password: 'hurley'} 
     }
 
     componentDidMount () {
@@ -31,9 +31,13 @@ export class Login extends Component {
             for(var i = 0; i < users.length; i++){
                 if((users[i].name === this.state.userName) && (users[i].password === this.state.password)) {
                     this.setState({
-                        loginCheck: true,
                         userData: users[i]
                     })
+                    console.log('pass')
+                    // return <Redirect to={{pathname: '/user/home', state: {userData: this.state.userData}}}/>
+                    this.props.history.push({ 
+                        pathname: '/user/home', state: {userData: this.state.userData}
+                       })
                 } else {
                     console.log('Username or password is incorrect')
                 }
@@ -42,12 +46,6 @@ export class Login extends Component {
     }
 
     render () {
-        if (this.state.loginCheck === true) {
-            return (
-                <Home data={this.state.userData}/>
-            )
-
-        } else {
         return (
             <div className='login-container'>
                 {/* ADD LOGO OF GAMESNIGHT */}
@@ -61,6 +59,5 @@ export class Login extends Component {
         )
     }
 }
-}
 
-export default Login
+export default withRouter(Login)
