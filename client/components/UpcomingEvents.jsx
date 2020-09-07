@@ -27,22 +27,22 @@ export class UpcomingEvents extends Component {
           <h1 className='upcoming-events-title'>Upcoming Events</h1>
               {this.state.events.map(event => {
                   return (
-                    <Link className='event-link' to={{pathname: `/user/event/${event.eventId}`, state: {userData: this.userData} }}> 
-                        <div className='event' key={event.eventId}>
-                            <h5 className='event-date' key={event.eventId}>{event.date}</h5>
-                            <div className='event-details'>
-                                <h3 className='event-name' key={event.eventId}>{event.event_name}</h3>
-                                <h4 className='event-attendees'>{event.guestCount} Going</h4>
+                    <Link className='event-link reveal' to={{pathname: `/user/event/${event.eventId}`, state: {userData: this.userData} }} key={event.eventId}> 
+                        <div className='event reveal' key={event.eventId}>
+                            <h5 className='event-date reveal' key={event.eventId}>{event.date}</h5>
+                            <div className='event-details reveal'>
+                                <h3 className='event-name reveal' key={event.eventId}>{event.event_name}</h3>
+                                <p className='event-attendees reveal'>{event.guestCount} Going</p>
                             </div>
-                            <img className='event-icon' src='Ellipse.svg'/>
+                            <img className='event-icon reveal' src='Ellipse.svg'/>
                         </div>
                     </Link>
                     )
-              })
-            }
-      </div>
-      )
+                })
+                }
+        </div>
+        )
+        }
     }
-}
 
 export default UpcomingEvents

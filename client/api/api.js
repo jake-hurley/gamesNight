@@ -54,7 +54,7 @@ export function inviteUser (eventId, userName) {
     request
     .post(`${baseURL}/userEvents/${eventId}/${userName}`)
     .end((err, res) => {
-        console.log(res)
+        return res
     })
 }
 

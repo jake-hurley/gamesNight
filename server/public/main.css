@@ -2,22 +2,34 @@
 
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
+/* MOBILE */
 
+@media only screen and (max-width: 600px) {
 /* LOGIN PAGE */
+
 .login-container {
   height: 100vh;
   width: 100vw;
   background: #00d499;
 }
 
-.login-title {
+.title {
+  color:white;
   text-align: center;
   font-size:2em;
   margin-top:0;
-  padding-top: 50%;
+  padding-top: 30%;
+
+}
+
+.login-title {
+  text-align: center;
+  font-size:1.6em;
+  margin-top:0;
+  padding-top: 3%;
 }
 
 .user-input {
@@ -25,7 +37,7 @@ body {
   margin:3% auto;
   width: 50%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.1em;
   border:none;
   border-radius: 14px;
   padding:1%;
@@ -33,7 +45,7 @@ body {
 
 .login-button {
   display: block;
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   width:30%;
   margin:3% auto;
@@ -54,7 +66,7 @@ body {
   color: black;
   text-decoration: none;
   display: block;
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
   width:25%;
   margin:0 auto;
@@ -73,9 +85,8 @@ body {
 /* HOME */
 
 .header-container {
-  height: 15vh;
+  height: 20%;
   background: #00d499;
-  color: #fff;
   margin: 0;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -83,7 +94,7 @@ body {
 
 .name {
   display: inline-block;
-  font-size: 2.5em;
+  font-size: 2.1em;
   width: 50%;
   margin: 3% 0 0 3%;
 }
@@ -91,26 +102,28 @@ body {
 .logout {
   display: inline-block;
   background: white;
-  font-size: 1.2em;
+  font-size: 1em;
   color: black;
   text-align: right;
   border-radius: 15px;
   padding:1%;
-  margin-left: 27%;
+  margin-left: 23%;
   text-decoration: none;
 }
 
 .date {
   display: inline-block;
-  margin: 5% 0 5% 4% ;
+  font-size: 1.8em;
+  width: 50%;
+  margin: 3% 0 3% 3%;
 }
 
 .new-event {
   background: white;
-  font-size: 1.5em;
+  font-size: 1em;
   color: black;
   padding: 1%;
-  margin-left: 38%;
+  margin-left: 12%;
   border-radius: 15px;
   text-decoration: none;
 }
@@ -122,12 +135,14 @@ body {
 }
 
 .upcoming-events-title {
+  font-size: 1.8em;
   margin-left: 3%; 
 }
 
 .event {
   border: 2px solid black;
   color: black;
+  background: #00d499;
   border-radius: 15px;
   margin: 0 0 2% 3%;
 }
@@ -139,7 +154,7 @@ body {
 .event-date {
   display: inline-block;
   border-right: 2px solid black;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 4%;
   width: 10%;
   margin: 0;
@@ -154,7 +169,7 @@ body {
   display: inline-block;
   width: 80%;
   margin: 0 0 5% 5%;
-  font-size: 1.2em;
+  font-size: 0.8em;
 
 }
 
@@ -163,7 +178,7 @@ body {
   text-align: right;
   width: 70%;
   margin: 0 0 5% 5%;
-  font-size: 1.2em;
+  font-size: 0.7em;
 }
 
 .event-icon {
@@ -172,7 +187,8 @@ body {
 
 /* EVENT PAGE */
 
-.header {
+.header-container {
+  height: 20%;
   background:#00d499;
 }
 
@@ -183,7 +199,7 @@ body {
 }
 
 .event-title {
-  font-size: 2em;
+  font-size: 1.7em;
   margin: 0 10% 2% 3%;
   padding-top: 2%;
 }
@@ -196,8 +212,9 @@ body {
 }
 
 .date-time {
- font-size: 1.5em;
+ font-size: 1.2em;
  margin: 0 0 2% 3%;
+ padding-bottom: 3%;
 }
 
 .location {
@@ -206,13 +223,13 @@ body {
 
 .game {
   margin-left:3%;
-  margin-top: 0;
+  margin-top: 5%;
 }
 
 .event-description {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
-  font-size: 1em;
+  font-size: 0.8em;
   margin-left: 3%;
   width: 55%;
   /* display: inline-block; */
@@ -221,7 +238,7 @@ body {
 .attendees-container {
   position: absolute;
   right: 0%;
-  top: 20%;
+  top: 25%;
   width: 37%;
   height: 50vh;
   border-top: 2px solid black;
@@ -232,7 +249,7 @@ body {
 }
 
 .attendees-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: center;
   padding-bottom:12.5%;
   margin-top: 2%;
@@ -240,6 +257,7 @@ body {
 }
 
 .attendees-list {
+  font-size: 0.8em;
   margin-top: 0;
   list-style: none;
   
@@ -252,7 +270,7 @@ body {
 /* INVITE COMPONENT */
 
 .invite-input {
-  font-size: 1em;
+  font-size: 0.8em;
   margin-left: 3%;
   width: 30%;
   padding: 1% ;
@@ -266,7 +284,7 @@ body {
 }
 
 .invite-button {
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   width:15%;
   padding: 1%;
@@ -295,8 +313,8 @@ input:focus {
 .new-event-title {
   text-align: center;
   margin-top:0;
-  padding-top:40%;
-  font-size: 2.5em;
+  padding-top:10%;
+  font-size: 2em;
   color: white;
 }
 
@@ -305,7 +323,7 @@ input:focus {
   margin:3% auto;
   width: 50%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border:none;
   border-radius: 14px;
   padding:1%;
@@ -333,7 +351,8 @@ input:focus {
   margin: 3% auto;
   width: 50%;
   display: block;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  text-align:center;
   border:none;
   border-radius: 14px;
   padding:1%;
@@ -342,7 +361,7 @@ input:focus {
 
 .new-event-button {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-align: center;
   width:50%;
   margin:3% auto;
@@ -352,7 +371,27 @@ input:focus {
   border-radius: 10px;
 }
 
+/* REGISTER */
 
+
+.new-user {
+  text-align: center;
+  font-size:2em;
+  margin-top:0;
+  padding-top: 40%;
+}
+
+}
+
+/* TABLET */
+
+@media only screen and (min-width: 786px) {
+}
+
+/* LAPTOP AND DESKTOP */
+
+/* @media only screen and (min-width: 992px) {
+} */
 
 
 

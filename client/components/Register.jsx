@@ -35,12 +35,12 @@ export class Register extends Component {
 
     render () {
         return (
-            <div>
-                <h3>New User</h3>
-                <input onChange={this.changeHandler} name='userName' placeholder='userName'></input>
-                <input type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
-                <input type='password' onChange={this.changeHandler} name='passwordCheck' placeholder='re-enter password'></input>
-                <button onClick={() => this.clickHandler()}>Register</button>
+            <div className='login-container'>
+                <h3 className='new-user'>New User</h3>
+                <input className='user-input' onChange={this.changeHandler} name='userName' placeholder='userName'></input>
+                <input className='user-input' type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
+                <input className='user-input' type='password' onChange={this.changeHandler} name='passwordCheck' placeholder='re-enter password'></input>
+                <button className='new-event-button' onClick={() => this.clickHandler()}>Register</button>
             </div>
         )
     }

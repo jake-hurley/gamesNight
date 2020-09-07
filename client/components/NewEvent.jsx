@@ -48,7 +48,7 @@ export class NewEvent extends Component {
   render () {
     return (
         <div className='new-event-container' >
-          <Link to='/'><img className='back-arrow' src='arrow.svg'/></Link>
+          <Link to='/user/home'><img className='back-arrow' src='arrow.svg'/></Link>
           <h1 className='new-event-title'>New Event</h1>
           <input className='user-input' name='event_name' placeholder='Event Name' onChange={this.changeHandler}></input>
           <input className='date-input' name='date' type='date' placeholder='Date' onChange={this.changeHandler}></input>

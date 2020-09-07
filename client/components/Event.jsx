@@ -16,7 +16,6 @@ export class Event extends Component {
 
 
   componentDidMount () {
-    // console.log(this.props)
     const eventId = this.props.match.params.eventId
     this.getEventData(eventId)
   }
@@ -50,7 +49,7 @@ export class Event extends Component {
           <h4 className='date-time'>{this.state.date}</h4>
         </div>
         <div className='event-container'>
-          <h4 className='location'>Location</h4>
+          {/* <h4 className='location'>Location</h4> */}
           <h4 className='game'>Playing: {this.state.game}</h4>
           <p className='event-description'>
           {this.state.description}
