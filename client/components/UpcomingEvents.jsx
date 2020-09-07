@@ -8,10 +8,11 @@ export class UpcomingEvents extends Component {
         events: []
     }
 
+    userData = JSON.parse(localStorage.getItem('userData'))
+    userId = this.userData.userId
+  
     componentDidMount() {
-        // console.log(this.props.data)
-        const userId = this.props.data.userId
-        getUserEvents(userId)
+        getUserEvents(this.userId)
         .then(events => {
             this.setState({
                 events: events
@@ -26,7 +27,7 @@ export class UpcomingEvents extends Component {
           <h1 className='upcoming-events-title'>Upcoming Events</h1>
               {this.state.events.map(event => {
                   return (
-                    <Link className='event-link' to={{pathname: `/user/event/${event.eventId}`, state: {userData: this.props.data} }}> 
+                    <Link className='event-link' to={{pathname: `/user/event/${event.eventId}`, state: {userData: this.userData} }}> 
                         <div className='event' key={event.eventId}>
                             <h5 className='event-date' key={event.eventId}>{event.date}</h5>
                             <div className='event-details'>

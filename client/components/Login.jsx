@@ -36,9 +36,11 @@ export class Login extends Component {
                     })
                     console.log('pass')
                     // return <Redirect to={{pathname: '/user/home', state: {userData: this.state.userData}}}/>
+                    localStorage.setItem('userData', JSON.stringify(this.state.userData))
                     this.props.history.push({ 
                         pathname: '/user/home', state: {userData: this.state.userData}
                        })
+                    
                 } else {
                     console.log('Username or password is incorrect')
                     this.setState({loginCheck: false})

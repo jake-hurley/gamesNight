@@ -12,10 +12,12 @@ export class NewEvent extends Component {
     date: '',
   }
 
+  userData = JSON.parse(localStorage.getItem('userData'))
+  userName = this.userData.name
+
   componentDidMount() {
-    const userName = this.props.location.state.name
     this.setState({
-      userName: userName
+      userName: this.userName
     })
   }
 
@@ -39,7 +41,7 @@ export class NewEvent extends Component {
       inviteUser(response, this.state.userName)
     })
     setTimeout(() =>  this.props.history.push({ 
-      pathname: '/user/home', state: {userData: this.props.location.state}
+      pathname: '/user/home', state: {userData: this.userData}
      }), 100)    
   }
 
