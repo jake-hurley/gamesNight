@@ -1,8 +1,8 @@
 import request from 'superagent'
 
 
-// const baseURL = 'http://localhost:3000/api/v1'
-const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
+const baseURL = 'http://localhost:20512/api/v1'
+// const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
 
 const acceptJsonHeader = { Accept: 'application/json' }
 
