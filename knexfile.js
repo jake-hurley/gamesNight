@@ -31,7 +31,10 @@ module.exports = {
       database: 'my_db',
       user:     'username',
       password: 'password',
-      url: 'postgres://jxqljrnxopskdo:09a9522cf56705a4c9c98f3cc9d6de4336028cace93e2cb77f20f9bae423d528@ec2-52-22-216-69.compute-1.amazonaws.com:5432/d9lkdn9bsd102e'
+      connection: 'postgres://jxqljrnxopskdo:09a9522cf56705a4c9c98f3cc9d6de4336028cace93e2cb77f20f9bae423d528@ec2-52-22-216-69.compute-1.amazonaws.com:5432/d9lkdn9bsd102e',
+      migrations: {
+        directory: './migrations'
+      }
 
     },
     pool: {
