@@ -67,6 +67,7 @@ export class Login extends Component {
         return (
             <div className='login-container'>
                 {/* ADD LOGO OF GAMESNIGHT */}
+                <h2 className='title'>GAMESNIGHT</h2>
                 <h3 className='login-title'>Login</h3>
                 <input className='user-input' onChange={this.changeHandler} name='userName' placeholder='userName'></input>
                 <input className='user-input' type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
