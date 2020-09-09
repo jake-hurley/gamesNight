@@ -15,7 +15,8 @@ module.exports = {
       database: 'my_db',
       user:     'username',
       password: 'password',
-      url: process.env.DATABASE_URL,
+      port: 36730,
+      url: process.env.DATABASE_URL
     },
     pool: {
       min: 2,
@@ -32,6 +33,7 @@ module.exports = {
       database: 'my_db',
       user:     'username',
       password: 'password',
+      port: 36730,
       url: process.env.DATABASE_URL
     },
     pool: {
