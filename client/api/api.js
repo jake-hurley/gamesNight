@@ -1,8 +1,8 @@
 import request from 'superagent'
 
 
-// const baseURL = 'http://localhost:3000/api/v1'
-const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
+const baseURL = 'http://localhost:3000/api/v1'
+// const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
 
 const acceptJsonHeader = { Accept: 'application/json' }
 
@@ -45,8 +45,7 @@ export function addEvent (eventObject) {
 export function getEventById (eventId) {
     return request
     .get(`${baseURL}/event/${eventId}`)
-    .then(response => {
-        
+    .then(response => {      
         return response.body
     })
 }
@@ -63,6 +62,14 @@ export function inviteUser (eventId, userName) {
 export function getUsers() {
     return request
     .get(`${baseURL}/users`)
+    .then(response => {
+        return response.body
+    })
+}
+
+export function getEvents() {
+    return request
+    .get(`${baseURL}/event`)
     .then(response => {
         return response.body
     })

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from "react-router"
 import { Link, useHistory } from 'react-router-dom'
 
-import { addEvent, inviteUser, getAttendees } from '../api/api'
+import { addEvent, inviteUser, getAttendees, getEvents } from '../api/api'
 
 export class NewEvent extends Component {
 
@@ -36,10 +36,15 @@ export class NewEvent extends Component {
 
   clickHandler () {
     addEvent(this.state)
-    // ADDS CREATOR AS AN ATTENDEE TO THIS EVENT
-    .then(response => {
-      inviteUser(response, this.state.userName)
+    getEvents()
+    .then(events => {
+      console.log(events[events.length - 1].eventId)
+      inviteUser(events[events.length - 1].eventId, this.state.userName)
     })
+    // ADDS CREATOR AS AN ATTENDEE TO THIS EVENT
+    // .then(response => {
+    //   inviteUser(response, this.state.userName)
+    // })
     setTimeout(() =>  this.props.history.push({ 
       pathname: '/user/home', state: {userData: this.userData}
      }), 100)    
