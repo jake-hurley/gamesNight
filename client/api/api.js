@@ -1,8 +1,8 @@
 import request from 'superagent'
 
 
-// const baseURL = 'http://localhost:3000/api/v1'
-const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
+const baseURL = 'http://localhost:3000/api/v1'
+// const baseURL = 'https://games-night-app.herokuapp.com/api/v1'
 
 const acceptJsonHeader = { Accept: 'application/json' }
 
@@ -99,6 +99,9 @@ function dateConvert (date) {
     let dateSplit = date.split('-')
     let dateIndex = Number(dateSplit[1] - 1)
     let newDate = dates[dateIndex] + ' ' + dateSplit[2] 
+    let timeSplit = newDate.split('T')
+    console.log(timeSplit)
+    newDate = timeSplit[0]
     return newDate
 }
 

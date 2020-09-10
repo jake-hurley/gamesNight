@@ -45,9 +45,9 @@ export class UpcomingEvents extends Component {
             )
         } else {
             return (
-            <div className='upcoming-events'>
-                <h2 className='upcoming-events-title'>No Upcoming Events</h2>
-            </div>
+                <div className='upcoming-events'>
+                    <h2 className='upcoming-events-title'>No Upcoming Events</h2>
+                </div>
             )
         }
     }
