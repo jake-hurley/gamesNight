@@ -6,17 +6,22 @@ import { getUsers } from '../api/api'
 import Home from './Home'
 
 export class Login extends Component {
+    _isMounted = false
+    loginCheck = true
 
     state = {
         userName: '',
         password: '',
-        userData: {},
-        loginCheck: true
+        userData: {}
     }
 
-    componentDidMount () {
-        getUsers()
+    componentDidMount() {
+        this._isMounted = true
     }
+
+    componentWillUnmount() {
+        this._isMounted = false
+      }
 
     changeHandler = (ev) => {
         const { name, value } = ev.target
@@ -25,32 +30,32 @@ export class Login extends Component {
         })
     }
 
+
     clickHandler = () => {
         getUsers()
         .then(users => {
-            for(var i = 0; i < users.length; i++){
-                if((users[i].name === this.state.userName) && (users[i].password === this.state.password)) {
-                    this.setState({
-                        userData: {
-                            userId: users[i].userId,
-                            name: users[i].name
-                        }
-                    })
-                    localStorage.setItem('userData', JSON.stringify(this.state.userData))
-                    this.props.history.push({ 
-                        pathname: '/user/home', state: {userData: this.state.userData}
-                       })
-                    
-                } else {
-                    console.log('Username or password is incorrect')
-                    this.setState({loginCheck: false})
+            if(this._isMounted) {
+                for(var i = 0; i < users.length; i++){
+                    if((users[i].name === this.state.userName) && (users[i].password === this.state.password)) {
+                        this.setState({
+                            userData: {
+                                userId: users[i].userId,
+                                name: users[i].name
+                            }
+                        })
+                        localStorage.setItem('userData', JSON.stringify(this.state.userData))
+                        this.props.history.push('/user/home')
+                        
+                    } else {
+                        this.loginCheck = false
+                    }
                 }
             }
         })
     }
 
     render () {
-        if(this.state.loginCheck === true){
+        if(this.loginCheck === true){
         return (
             <div className='login-container'>
                 {/* ADD LOGO OF GAMESNIGHT */}
