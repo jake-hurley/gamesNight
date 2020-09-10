@@ -37,7 +37,6 @@ export function addEvent (eventObject) {
   .send(eventObject)
   .then(res => {
     //RETURNS EVENT ID SO THAT CREATOR CAN BE ADDED AS ATTENDEE
-    console.log('api repsonse', res)
     return res.body[0]
   })
 }
@@ -88,7 +87,6 @@ export function addUser(newUser) {
     .post(`${baseURL}/users/register`)
     .send(newUser)
     .end((err, res) => {
-        console.log(res)
     })
 }
 
@@ -100,7 +98,6 @@ function dateConvert (date) {
     let dateIndex = Number(dateSplit[1] - 1)
     let newDate = dates[dateIndex] + ' ' + dateSplit[2] 
     let timeSplit = newDate.split('T')
-    console.log(timeSplit)
     newDate = timeSplit[0]
     return newDate
 }

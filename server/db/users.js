@@ -10,7 +10,6 @@ function getUserById (id, db = connection) {
 }
 
 function addUser (newUser, db = connection) {
-  console.log(newUser)
   const { userName, password } = newUser
   return db('users')
   .insert({

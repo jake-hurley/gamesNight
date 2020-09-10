@@ -38,13 +38,8 @@ export class NewEvent extends Component {
     addEvent(this.state)
     getEvents()
     .then(events => {
-      console.log(events[events.length - 1].eventId)
       inviteUser(events[events.length - 1].eventId, this.state.userName)
     })
-    // ADDS CREATOR AS AN ATTENDEE TO THIS EVENT
-    // .then(response => {
-    //   inviteUser(response, this.state.userName)
-    // })
     setTimeout(() =>  this.props.history.push({ 
       pathname: '/user/home', state: {userData: this.userData}
      }), 100)    

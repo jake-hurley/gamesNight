@@ -55,6 +55,10 @@ body {
   border-radius: 10px;
 }
 
+.login-button:focus {
+  outline:none;
+}
+
 .new-here {
   text-align: center;
   font-size:1.5em;
