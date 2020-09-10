@@ -37,6 +37,7 @@ export function addEvent (eventObject) {
   .send(eventObject)
   .then(res => {
     //RETURNS EVENT ID SO THAT CREATOR CAN BE ADDED AS ATTENDEE
+    console.log('api repsonse', res.body[0])
     return res.body[0]
   })
 }
