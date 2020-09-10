@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.schema.createTable('events', (table) => {
-    table.increments('eventId').unique()
+    table.increments('eventId').Primary()
     table.string('event_name')
     table.string('game')
     table.date('date')
