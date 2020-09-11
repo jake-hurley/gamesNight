@@ -37,7 +37,7 @@ export class Register extends Component {
         return (
             <div className='login-container'>
                 <h3 className='new-user'>New User</h3>
-                <input className='user-input' onChange={this.changeHandler} name='userName' placeholder='userName'></input>
+                <input className='user-input' onChange={this.changeHandler} name='userName' placeholder='userName' autoComplete='off'></input>
                 <input className='user-input' type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
                 <input className='user-input' type='password' onChange={this.changeHandler} name='passwordCheck' placeholder='re-enter password'></input>
                 <button className='new-event-button' onClick={() => this.clickHandler()}>Register</button>

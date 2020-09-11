@@ -34,7 +34,7 @@ export class Invite extends Component {
   render () {
     return (
     <div>
-        <input className='invite-input' name='inviteUser' onChange={this.changeHandler} placeholder='Invite Someone!'></input>
+        <input className='invite-input' name='inviteUser' autoComplete='off' onChange={this.changeHandler} placeholder='Invite Someone!'></input>
         <a className='invite-button' onClick={() => this.clickHandler()}>Invite!</a>
     </div>
     )
