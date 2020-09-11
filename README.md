@@ -2,13 +2,13 @@
 
 GamesNight is a WebApp Designed for hosting and parttaking in GamesNight events with Friends and Family.
 
-Use instructions
+https://games-night-app.herokuapp.com/#/
 
+(may take a few seconds to load initially due to Heroku booting up)
 
-1. Clone Repo
-2. Run ```npm install```
-3. Run Database Migrations and seeds.
-    ```npx knex migrate:latest```
-    ```npx knex seed:run```
-4. bootup local server with ```npm run dev```
-5. open http://localhost:3000/ in your browser.
+Login as a Guest:
+
+userName: guest
+password: guest123
+
+Or create your own user and start using yourself!
