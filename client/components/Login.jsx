@@ -61,7 +61,7 @@ export class Login extends Component {
                 {/* ADD LOGO OF GAMESNIGHT */}
                 <h2 className='title reveal'>GAMESNIGHT</h2>
                 <h3 className='login-title reveal'>Login</h3>
-                <input className='user-input reveal' onChange={this.changeHandler} name='userName' placeholder='userName'></input>
+                <input className='user-input reveal' onChange={this.changeHandler} name='userName' placeholder='userName' autoComplete='off'></input>
                 <input className='user-input reveal' type='password' onChange={this.changeHandler} name='password' placeholder='password'></input>
                 <button className='login-button reveal' onClick={() => this.clickHandler()}>Login</button>
                 <h5 className='new-here reveal'>New here?</h5>
