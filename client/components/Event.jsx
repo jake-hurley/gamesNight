@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from "react-router"
-import { getEventById, getAttendees } from '../api/api'
+import { getEventById, getAttendees, dateConvert } from '../api/api'
 
 import Invite from './Invite'
 
@@ -23,6 +23,7 @@ export class Event extends Component {
   getEventData = (event) => {
     getEventById(event)
     .then(eventData => {
+      eventData.date = dateConvert(eventData.date)
       this.setState({
         event_name: eventData.event_name,
         game: eventData.game,

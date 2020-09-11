@@ -88,7 +88,7 @@ export function addUser(newUser) {
     })
 }
 
-function dateConvert (date) {
+export function dateConvert (date) {
     const dates = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ]
