@@ -9,6 +9,7 @@ https://games-night-app.herokuapp.com/#/
 Login as a Guest:
 
 userName: guest
+
 password: guest123
 
 Or create your own user and start using yourself!
