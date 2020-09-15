@@ -6,7 +6,7 @@ function getUserEvents (userId, db = connection) {
     .join('users', 'user_id', 'userId')
     .join('events', 'event_id', 'eventId')
     .where('user_id', userId)
-    .select('eventId', 'event_name', 'date', 'name', 'userId')
+    .select('eventId', 'event_name', 'date', 'name', 'userId', 'game')
 }
 
 function getAttendees (eventId, db = connection) {

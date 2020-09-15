@@ -180,9 +180,9 @@ body {
   
   }
   
-  .event-attendees {
+  .event-playing {
     display: inline-block;
-    text-align: right;
+    text-align: left;
     width: 70%;
     margin: 0 0 5% 5%;
     font-size: 0.7em;
@@ -530,6 +530,7 @@ body {
 .event {
   border: 2px solid black;
   color: black;
+  width:100%;
   background: #00d499;
   border-radius: 15px;
   margin: 0 0 2% 3%;
@@ -555,15 +556,15 @@ body {
 
 .event-name {
   display: inline-block;
-  width: 80%;
+  width: 90%;
   margin: 0 0 5% 5%;
   font-size: 0.8em;
 
 }
 
-.event-attendees {
+.event-playing {
   display: inline-block;
-  text-align: right;
+  text-align: left;
   width: 70%;
   margin: 0 0 5% 5%;
   font-size: 0.7em;

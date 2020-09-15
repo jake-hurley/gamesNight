@@ -33,9 +33,9 @@ export class UpcomingEvents extends Component {
                                 <h5 className='event-date reveal' key={event.eventId}>{event.date}</h5>
                                 <div className='event-details reveal'>
                                     <h3 className='event-name reveal' key={event.eventId}>{event.event_name}</h3>
-                                    <p className='event-attendees reveal'>{event.guestCount} Going</p>
+                                    <p className='event-playing reveal'>Playing {event.game}</p>
                                 </div>
-                                <img className='event-icon reveal' src='Ellipse.svg'/>
+                                <img className='event-icon reveal' src='dice.svg'/>
                             </div>
                         </Link>
                         )
